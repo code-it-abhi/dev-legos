@@ -8,8 +8,8 @@
     "build": "tsc -b && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "format": "prettier --check .",
-    "format:fix": "prettier --write .",
+    "format": "eslint . --max-warnings 0",
+    "format:fix": "eslint . --fix",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -38,6 +38,6 @@
     "pre-commit": "pnpm lint-staged"
   },
   "lint-staged": {
-    "*": "eslint --fix"
+    "*.{js,jsx,ts,tsx,json,css,md}": "eslint --fix"
   }
 }
